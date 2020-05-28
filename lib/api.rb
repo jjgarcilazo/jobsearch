@@ -6,9 +6,6 @@ class API
         uri = URI(url)
         response = Net::HTTP.get(uri)
         hash = JSON.parse(response)
-        array_of_jobs = hash ["jobs"]
-        array_of_jobs.each do |jobs|
-        end    
-    
+        
     end
 end
