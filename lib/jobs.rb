@@ -1,7 +1,8 @@
-class Job
+
+ class Jobs
     #attributes and jobs
 
-    attr_accessor :job, :location, :full_time
+    attr_accessor :name, :location, :full_time, :jobs
     @@all = []
 
     def initialize

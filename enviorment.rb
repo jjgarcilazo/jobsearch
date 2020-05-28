@@ -1,7 +1,7 @@
 #require all gems that is used 
 # require all files being used
 
-
+require 'pry'
 require 'net/http'
 require 'json'
 
