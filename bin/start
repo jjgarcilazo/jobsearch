@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+
+require_relative "/home/jj/jobsearch/enviorment.rb"
+
+cli_instance = CLI.new
+cli_instance.start
+
+CLI.new.start

@@ -5,7 +5,7 @@ require 'net/http'
 require 'json'
 
 
-require_relative "./lib/api"
-require_relative "./lib/cli"
-require_relative "./lib/jobs"
+require_relative "/home/jj/jobsearch/lib/api.rb"
+require_relative "/home/jj/jobsearch/lib/cli.rb"
+require_relative "/home/jj/jobsearch/lib/jobs.rb"
 
