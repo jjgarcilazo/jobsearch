@@ -2,10 +2,12 @@ class API
     #make calls to API
 
     def self.jobs
-        url = "https://jobs.github.com/positions.json?description=python&location=new+york"
+        url = "https://jobs.github.com/positions.json?description=ruby&page=1"
         uri = URI(url)
         response = Net::HTTP.get(uri)
         list_jobs = JSON.parse(response)
+        
+
 
        
 
@@ -17,7 +19,7 @@ class API
             job_instance.title = job_hash ["title"]
             job_instance.location = job_hash ["location"]
             job_instance.type = job_hash["type"]
-            job_instance.description = job_hash["description"]
+            job_instance.url = job_hash["url"]
 
         end
     

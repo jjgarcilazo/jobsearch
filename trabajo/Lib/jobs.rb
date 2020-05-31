@@ -4,7 +4,7 @@
   class Jobs
     #attributes and jobs
 
-    attr_accessor :id, :location, :type, :description, :title, :company
+    attr_accessor :id, :location, :type, :url, :title, :company
     @@all = []
     
     def initialize
