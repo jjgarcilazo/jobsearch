@@ -13,7 +13,7 @@ class CLI
             puts "please Wait while we search full time jobs"
             
             list_jobs
-        else 
+        else
             puts "what about part time jobs? "
         end
     end  
