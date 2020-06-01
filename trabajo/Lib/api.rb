@@ -7,6 +7,7 @@ class API
         response = Net::HTTP.get(uri)
         list_jobs = JSON.parse(response)
         
+        
 
 
        
@@ -22,6 +23,8 @@ class API
             job_instance.url = job_hash["url"]
 
         end
+
+        
     
        
 

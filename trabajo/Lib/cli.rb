@@ -13,12 +13,13 @@ class CLI
         if user_input == "yes" || user_input == "y"
             puts "please wait while we search database for avalible jobs"
             list_jobs
-        ifelse
-            puts "what about contract jobs? "
+         else
+            puts "what about contract jobs?"
            user_input = gets.strip.downcase
-           if user_input == "yes" || user_input = "y"
-            puts "please wait while we locate avalible contract jobs."
+           if user_input == "yes" || user_input == "y"
+            puts "please wait while we locate availible contract jobs."
             display_contract
+        
         end
     end  
      
@@ -30,12 +31,19 @@ class CLI
         puts jobs_hash.type
         puts jobs_hash.url
        end
+       
     end
+  
 
     def display_contract
-        Jobs.all.each.with index (8) do |jobs_hash , index|
-         puts "#{index}. #{jobs_hash}"
-        end
+        Jobs.select { |pt|contract.start_with?  "contract"}
+        
+         
     end
+
+    
+
+    
+end
 end
 
