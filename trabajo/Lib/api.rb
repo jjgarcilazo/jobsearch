@@ -22,8 +22,11 @@ class API
             job_instance.location = job_hash ["location"]
             job_instance.type = job_hash["type"]
             job_instance.url = job_hash["url"]
+            job_instance.url = job_hash["description"]
 
         end
+
+        
 
         
     

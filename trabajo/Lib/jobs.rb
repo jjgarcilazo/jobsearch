@@ -4,7 +4,7 @@
   class Jobs
     #attributes and jobs
 
-    attr_accessor :id, :location, :type, :url, :title, :company
+    attr_accessor :id, :location, :type, :url, :title, :company, :description
     @@all = []
     # Your code goes here...
     # Here we initilize our all variable relating to displaying all jobs 

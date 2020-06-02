@@ -43,7 +43,7 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/jjgarc
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT). direct link to jobsearch license (https://github.com/jjgarcilazo/jobsearch/blob/master/trabajo/LICENSE.txt )
 
 ## Code of Conduct
 
