@@ -4,23 +4,42 @@ class CLI
         puts "Welcome To Github Job search CLI"
         API.jobs
         self.menu
+          
+
         # ^  start of the program in list order
     end
            # v here we build our menu and user inputs if any
-           # along with responses ,in this case we ask what type of jobs to search for
+           # along with responses ; in this case we ask what type of jobs to search for
     def menu
         puts " Do you want to search for all jobs avalible?"
         user_input = gets.strip.downcase
         if user_input == "yes" || user_input == "y"
             puts "please wait while we search database for avalible jobs"
             list_jobs
-         else       
+            start   # Here we add what responses to display in order.
+         else          
             puts "what about contract jobs?"
            user_input = gets.strip.downcase
            if user_input == "yes" || user_input == "y"
              puts "please wait while we locate availible contract jobs."
              display_contract
-           end
+             start     
+                         #this was the final user input by asking if you want to leave 
+              else 
+                  puts "would you like to exit program ?" 
+                  user_input = gets.strip.downcase
+                  if user_input == "yes" || user_input == "y" 
+
+                    puts "Thank you for using Github CLI job search"
+                         
+                end  
+           
+             
+             
+
+
+            end
+
         
         end
     end  
@@ -48,7 +67,7 @@ class CLI
         puts pt.type
         puts pt.url
          # this is the response displayed if contract jobs are being searched
-         
+
     end
 
     
