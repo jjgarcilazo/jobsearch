@@ -1,6 +1,6 @@
-# Jobs
+# Github Job Search CLI 
 
-Welcome to Github Jobsearch CLI this program is meant to seperate and search availible job postings on github jobs by full time and contract jobs. 
+Welcome to Github Jobsearch CLI, this simple program is meant to seperate and search availible job postings on github jobs by full time and contract jobs. 
 
 
 ## Installation
@@ -26,9 +26,12 @@ Or install it yourself as:
 
 TODO: When Prompted at Welcome page you are asked if you want to search for availible Fulltime Jobs or Contract jobs .
 
+Get a detailed description on positions listed when prompted.
+
+
 
 ## Running the tests
-run bin/jobsearch you will be asked a yess/no questions, you responses will differ based on answers. 
+run bin/jobsearch you will be asked a yes/no questions, you responses will differ based on answers. TO EXIT : simply respond no to job questions.
 
 ## Development
 

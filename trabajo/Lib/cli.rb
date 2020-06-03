@@ -21,10 +21,12 @@ class CLI
           if user_input == "yes" || user_input == "y"
             detail_ft
             menu
-          end
+            else
+             menu 
+            end 
         else 
-         contract_jobs    
-          
+              contract_jobs    
+            
         end
     end
         
@@ -49,10 +51,12 @@ class CLI
                          puts "would you like to exit program ?" 
                          user_input = gets.strip.downcase
                          if user_input == "yes" || user_input == "y" 
-                            
+
                             puts "Thank you for using Github CLI job search"
+                            exit
                          else 
                              puts "you ask for too much , stay tuned for more features on new updates"
+                             menu
                                 
                          end
                     end  
