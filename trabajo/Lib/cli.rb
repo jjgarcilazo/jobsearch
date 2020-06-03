@@ -51,7 +51,8 @@ class CLI
                          if user_input == "yes" || user_input == "y" 
                             puts "Thank you for using Github CLI job search"
                          else 
-                             menu    
+                             puts "you ask for too much , stay tuned for more features on new updates"
+                            menu    
                          end
                     end  
      
