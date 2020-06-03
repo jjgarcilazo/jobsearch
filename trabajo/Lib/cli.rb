@@ -49,10 +49,11 @@ class CLI
                          puts "would you like to exit program ?" 
                          user_input = gets.strip.downcase
                          if user_input == "yes" || user_input == "y" 
+                            
                             puts "Thank you for using Github CLI job search"
                          else 
                              puts "you ask for too much , stay tuned for more features on new updates"
-                            menu    
+                                
                          end
                     end  
      
