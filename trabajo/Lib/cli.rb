@@ -16,7 +16,20 @@ class CLI
         if user_input == "yes" || user_input == "y"
          puts "please wait while we search database for avalible jobs"
          list_jobs
-          puts "do you want a detailed view on the job listings? "
+         quest
+        
+        else 
+              contract_jobs    
+            
+        end
+    end
+        
+    
+          
+                       
+                    # Here we add what responses to display in order. 
+        def quest
+            puts "do you want a detailed view on the job listings? "
           user_input = gets.strip.downcase
           if user_input == "yes" || user_input == "y"
             detail_ft
@@ -24,15 +37,7 @@ class CLI
             else
              menu 
             end 
-        else 
-              contract_jobs    
-            
-        end
-    end
-        
-          
-                       
-                    # Here we add what responses to display in order.                                                                                                                                                                                                                                                                                                                                                                                                                       
+        end                                                                                                                                                                                                                                                                                                                                                                                                                       
         def contract_jobs                                                                                                                                                      
          puts "what about contract jobs?"
          user_input = gets.strip.downcase

@@ -1,7 +1,7 @@
 
 #!/usr/bin/env ruby
 
-require_relative "/home/jj/jobsearch/trabajo/Lib/enviorment.rb"
+require_relative "../Lib/enviorment.rb"
 
 cli_instance = CLI.new 
 cli_instance.start

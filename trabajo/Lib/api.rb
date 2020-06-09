@@ -15,14 +15,8 @@ class API
            #list job instances to generate 
            # list of jobs while refering to 
            #  jobs.rb attributes
-           job_instance = Jobs.new
-            job_instance.company =job_hash["company"]
-            job_instance.id = job_hash["id"]
-            job_instance.title = job_hash ["title"]
-            job_instance.location = job_hash ["location"]
-            job_instance.type = job_hash["type"]
-            job_instance.url = job_hash["url"]
-            
+           job_instance = Jobs.new 
+           
 
         end
 
