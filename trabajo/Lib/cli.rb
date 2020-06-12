@@ -14,12 +14,12 @@ class CLI
         puts " Do you want to search for all jobs avalible?"
         user_input = gets.strip.downcase
         if user_input == "yes" || user_input == "y"
-         puts "please wait while we search database for avalible jobs"
-         list_jobs
-         quest
+            puts "please wait while we search database for avalible jobs"
+            list_jobs
+            quest
         
         else 
-              contract_jobs    
+            contract_jobs    
             
         end
     end
@@ -29,15 +29,24 @@ class CLI
                        
                     # Here we add what responses to display in order. 
         def quest
-            puts "do you want a detailed view on the job listings? "
-          user_input = gets.strip.downcase
-          if user_input == "yes" || user_input == "y"
-            detail_ft
-            menu
+            #ask user for choice
+            puts "Enter job listing number for more details "
+            user_input = gets.strip.to_i
+            
+            #validate input
+            max_limit = Jobs.all.length - 1 
+            if !index.between?(0,max_limit) #if not valid
+                puts "sorry enter a valid number"
+                quest
             else
-             menu 
-            end 
-        end                                                                                                                                                                                                                                                                                                                                                                                                                       
+            
+                #found thier choice
+                job_instance = Jobs.all[index]
+                puts list_jobs
+                menu
+            end
+        end
+                                                                                                                                                                                                                                                                                                                                                                                                                               
         def contract_jobs                                                                                                                                                      
          puts "what about contract jobs?"
          user_input = gets.strip.downcase
@@ -51,39 +60,43 @@ class CLI
           end 
         end 
                        
-                         #this was the final user input by asking if you want to leave 
-                    def exos
-                         puts "would you like to exit program ?" 
-                         user_input = gets.strip.downcase
-                         if user_input == "yes" || user_input == "y" 
+            #this was the final user input by asking if you want to leave 
+    def exos
+        puts "would you like to exit program ?" 
+        user_input = gets.strip.downcase
+        if user_input == "yes" || user_input == "y" 
 
-                            puts "Thank you for using Github CLI job search"
-                            exit
-                         else 
-                             puts "you ask for too much , stay tuned for more features on new updates"
-                             menu
-                                
-                         end
-                    end  
-     
-     
-    def list_jobs
-        # our response for full time jobs is built here 
-        #it displays the jobs with certain info 
-        Jobs.all.each do |jobs_hash|
-         puts jobs_hash.title
-         puts jobs_hash.company
-         puts jobs_hash.location
-         puts jobs_hash.type
-         puts jobs_hash.url
+            puts "Thank you for using Github CLI job search"
+            exit
+        else 
+            puts "you ask for too much , stay tuned for more features on new updates"
+            menu
+            
         end
+    end  
+     
+     
+    # def list_jobs
+    #     # our response for full time jobs is built here 
+    #     #it displays the jobs with certain info 
+    #     Jobs.all.each do |work|
+    #      puts work.title
+    #      puts work.company
+    #      puts work.location
+    #      puts work.type
+    #      puts work.url
+    #     end
        
+    # end
+    def list_jobs
+        Jobs.all.each.with_index(1) do |job_listing, index| 
+            puts "#{index} for #{job_listing.title}"
+        end
     end
-    
   
 
     def display_contract
-       pt = Jobs.all.find { |jobs_hash| jobs_hash.type == "Contract" }
+       pt = Jobs.all.find { |work| work.type == "Contract" }
         puts pt.title
         puts pt.company
         puts pt.location
@@ -100,7 +113,7 @@ class CLI
             puts detail.location
             puts detail.type
             puts detail.url
-            puts detail.description
+            
             
         end 
     end
@@ -117,7 +130,7 @@ class CLI
             puts detail.location
             puts detail.type
             puts detail.url
-        puts detail.description
+        
         exos
 
        
@@ -127,7 +140,5 @@ class CLI
 
 
     
-
     
 end
-

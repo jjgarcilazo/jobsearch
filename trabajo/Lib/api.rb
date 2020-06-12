@@ -11,14 +11,14 @@ class API
         #refer to uri respnse to be parsed 
         #defind below method to link to cli file
 
-        list_jobs.each do |job_hash|
+        #list_jobs.each do |work|
            #list job instances to generate 
            # list of jobs while refering to 
            #  jobs.rb attributes
-           job_instance = Jobs.new 
+          # job_instance = Jobs.new
            
 
-        end
+       # end
 
          detail_ft.each do |detail|
             #list job instances to generate 
@@ -31,7 +31,7 @@ class API
              detail_ft.location = detail ["location"]
              detail_ft.type = detail["type"]
              detail_ft.url = detail["url"]
-             detail_ft.description =detail["description"]
+             
              
  
          end
