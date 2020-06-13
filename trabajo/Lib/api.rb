@@ -11,14 +11,9 @@ class API
         #refer to uri respnse to be parsed 
         #defind below method to link to cli file
 
-        #list_jobs.each do |work|
-           #list job instances to generate 
-           # list of jobs while refering to 
-           #  jobs.rb attributes
-          # job_instance = Jobs.new
+        
            
 
-       # end
 
          detail_ft.each do |detail|
             #list job instances to generate 

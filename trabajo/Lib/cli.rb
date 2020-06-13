@@ -31,22 +31,23 @@ class CLI
         def quest
             #ask user for choice
             puts "Enter job listing number for more details "
-            user_input = gets.strip.to_i
+            
+            index = gets.strip.to_i - 1
             
             #validate input
             max_limit = Jobs.all.length - 1 
             if !index.between?(0,max_limit) #if not valid
                 puts "sorry enter a valid number"
                 quest
+
             else
             
                 #found thier choice
-                job_instance = Jobs.all[index]
-                puts list_jobs
-                menu
+                detailed_jobs
+                
             end
         end
-                                                                                                                                                                                                                                                                                                                                                                                                                               
+
         def contract_jobs                                                                                                                                                      
          puts "what about contract jobs?"
          user_input = gets.strip.downcase
@@ -76,16 +77,18 @@ class CLI
     end  
      
      
-    # def list_jobs
-    #     # our response for full time jobs is built here 
-    #     #it displays the jobs with certain info 
-    #     Jobs.all.each do |work|
-    #      puts work.title
-    #      puts work.company
-    #      puts work.location
-    #      puts work.type
-    #      puts work.url
-    #     end
+        def detailed_jobs
+         # our response for full time jobs is built here 
+         #it displays the jobs with certain info 
+          Jobs.all.each do |work|
+          puts work.title
+          puts work.company
+          puts work.location
+          puts work.type
+          puts work.url
+          exos
+          end
+        end
        
     # end
     def list_jobs
@@ -98,12 +101,27 @@ class CLI
     def display_contract
        pt = Jobs.all.find { |work| work.type == "Contract" }
         puts pt.title
-        puts pt.company
-        puts pt.location
+       
         puts pt.type
-        puts pt.url
+        
          # this is the response displayed if contract jobs are being searched
-
+        cali    
+    end
+    def cali
+        puts "do you want more details?"
+        user_input = gets.strip.downcase
+        if user_input == "yes" || user_input == "y" 
+            puts "searching for jobs"
+          pt = Jobs.all.find { |work| work.type == "Contract" }
+          puts pt.title
+          puts pt.type
+          puts pt.company
+          puts pt.location
+          puts pt.url
+          exos
+        else
+            menu
+       end
     end
      
     def detail_ft
