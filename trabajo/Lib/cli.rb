@@ -36,16 +36,17 @@ class CLI
             
             #validate input
             max_limit = Jobs.all.length - 1 
-            if !index.between?(0,max_limit) #if not valid
+            until index.between?(0,max_limit) #if not valid
                 puts "sorry enter a valid number"
                 quest
 
-            else
-            
-                #found thier choice
-                detailed_jobs
-                
             end
+              bun = Jobs.all[index]
+                #found thier choice
+                
+                detailed_jobs(bun)
+                
+            
         end
 
         def contract_jobs                                                                                                                                                      
@@ -77,17 +78,17 @@ class CLI
     end  
      
      
-        def detailed_jobs
+        def detailed_jobs(bun)
          # our response for full time jobs is built here 
          #it displays the jobs with certain info 
-          Jobs.all.each do |work|
-          puts work.title
-          puts work.company
-          puts work.location
-          puts work.type
-          puts work.url
-          exos
-          end
+         puts bun.title
+         puts bun.company
+         puts bun.location
+         puts bun.type
+         puts bun.url
+         menu
+          
+          
         end
        
     # end
