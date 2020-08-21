@@ -11,10 +11,10 @@ class CLI
            # v here we build our menu and user inputs if any
            # along with responses ; in this case we ask what type of jobs to search for
     def menu
-        puts " Do you want to search for all jobs avalible?"
+        puts " Do you want to search for all jobs available?"
         user_input = gets.strip.downcase
         if user_input == "yes" || user_input == "y"
-            puts "please wait while we search database for avalible jobs"
+            puts "please wait while we search database for available jobs"
             list_jobs
             quest
         
@@ -55,7 +55,6 @@ class CLI
           if user_input == "yes" || user_input == "y"
           puts "please wait while we locate availible contract jobs."
           display_contract
-          detail_pt
           menu
            else
             exos
@@ -85,12 +84,11 @@ class CLI
          puts bun.company
          puts bun.location
          puts bun.type
-         puts bun.url
-         menu
-          
-          
+          puts bun.url
+         cali   
         end
        
+
     # end
     def list_jobs
         Jobs.all.each.with_index(1) do |job_listing, index| 
@@ -100,28 +98,29 @@ class CLI
   
 
     def display_contract
-       pt = Jobs.all.find { |work| work.type == "Contract" }
-        puts pt.title
-       
-        puts pt.type
+       pt = Jobs.all.find { |work| work.type == 'contract' }
+        if pt.nil? 
+         puts "no contract jobs available at this time sorry"
         
+        else
+          puts pt.title
+          puts pt.company
+          detail_pt
+
+        end
+        cali
          # this is the response displayed if contract jobs are being searched
-        cali    
+            
     end
     def cali
-        puts "do you want more details?"
+        puts "Thanks For using Job Search CLI "
+        puts " do you want to keep using CLI ?"
         user_input = gets.strip.downcase
         if user_input == "yes" || user_input == "y" 
-            puts "searching for jobs"
-          pt = Jobs.all.find { |work| work.type == "Contract" }
-          puts pt.title
-          puts pt.type
-          puts pt.company
-          puts pt.location
-          puts pt.url
-          exos
+          
+          menu
         else
-            menu
+            exos
        end
     end
      

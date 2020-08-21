@@ -6,7 +6,6 @@
 
 
     attr_accessor :id, :location, :type, :url, :title, :company
-    
 
     @@all = []
     # Your code goes here...
