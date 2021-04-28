@@ -10,16 +10,17 @@
     @@all = []
     # Your code goes here...
     # Here we initilize our all variable relating to displaying all jobs 
-    def initialize()
-        @@all << self
-        @id = id 
-        @location = location
-        @type = type
-        @url = url
-        @company = company
-        @title = title
-        
-        
+    def initialize=(title)
+      @title = title 
+    
+    end
+    def title=(title)
+      @title = title
+      @@all << self
+
+    end
+    def title
+      @title
     end
 
     def self.all
