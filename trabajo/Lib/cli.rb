@@ -71,8 +71,7 @@ class CLI
          @pt = Jobs.all.find { |detail| detail.type == "Contract" }
            
         exos
-        end
-
+         end
         end
         cali
           menu
