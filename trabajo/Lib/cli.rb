@@ -40,12 +40,16 @@ class CLI
                 
             
         end
+
+
         def pt=(pt)
             @pt = pt
         end
         def pt
             @pt
         end
+
+
         def contract_jobs                                                                                                                                                      
          puts "what about contract jobs?"
          user_input = gets.strip.downcase
@@ -62,14 +66,12 @@ class CLI
         user_input = gets.strip.downcase
          if user_input == "yes" || user_input == "y"
          puts " Hold on you ask for too much..."
-         detail_ft
-         @pt = Jobs.all.find { |detail| detail.type == "Contract" }
-           details
-        
-        exos
-
-       
+          Jobs.all.each do |bun|
          end
+         @pt = Jobs.all.find { |detail| detail.type == "Contract" }
+           
+        exos
+        end
 
         end
         cali
@@ -120,23 +122,16 @@ class CLI
        end
     end
      
-    def detail_ft
-       Jobs.all.each do |bun|
-        end 
-    end
+    
 
      def detail_pt 
         puts "Do you want more details ? "
         user_input = gets.strip.downcase
          if user_input == "yes" || user_input == "y"
          puts " Hold on you ask for too much..."
-         detail_ft
          @pt = Jobs.all.find { |detail| detail.type == "Contract" }
-         details
-        
         exos
-
-       
+        
          end
     end
 
